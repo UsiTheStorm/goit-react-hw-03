@@ -2,7 +2,7 @@
   --primary-color: #634caf;
   --primary-dark: #59388e;
   --secondary-color: #ffc107;
-  --background-light: #f4f7f6;
+  --background-light: #f4f2f9;
   --surface-color: #fff;
   --text-dark: #212121;
   --text-light: #fff;
@@ -29,15 +29,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-}
-
-#root > div {
-  max-width: 1000px;
-  width: 100%;
-  background: var(--surface-color);
-  padding: 2.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 h1 {
@@ -81,8 +72,7 @@ h3 {
 .search-field {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* width: 100%; */
+
   gap: 1.5rem;
 }
 
