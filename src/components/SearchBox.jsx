@@ -1,6 +1,11 @@
 import React from 'react';
 
-function SearchBox() {
+function SearchBox({ onFilter, value }) {
+  //   function searchContacts(evt) {
+  //     console.log(evt);
+  //     el;
+  //   }
+
   return (
     <div className="section-container search-section">
       <div className="search">
@@ -14,6 +19,8 @@ function SearchBox() {
             name="searchBox"
             id="searchBox"
             placeholder="Search by name"
+            value={value}
+            onChange={(e) => onFilter(e.target.value)}
           />
         </div>
       </div>

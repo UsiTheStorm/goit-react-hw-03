@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function Contact({ contact }) {
   const { name, number } = contact;
-  console.log(name);
+  //   console.log(name);
   return (
     <li className="contact-item">
       <div className="contact-details">
