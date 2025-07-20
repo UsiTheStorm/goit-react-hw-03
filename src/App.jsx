@@ -8,15 +8,15 @@ import SearchBox from './components/SearchBox';
 import contactList from './data/contacts.json';
 
 function App() {
-  const [contacts, addContact] = useState(contactList);
+  const [contacts, setContacts] = useState(contactList);
   const [filter, setFilter] = useState('');
 
   const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()),
+    contact.name?.toLowerCase().includes(filter.toLowerCase()),
   );
 
   const handleAddContact = (newContact) => {
-    addContact((prevContacts) => [...prevContacts, newContact]);
+    setContacts((prevContacts) => [...prevContacts, newContact]);
   };
 
   console.log(filteredContacts);

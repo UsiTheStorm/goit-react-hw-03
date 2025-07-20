@@ -8,15 +8,20 @@ function ContactForm({ onAddContact }) {
   const numberFieldId = useId();
 
   function handleSubmit(values, actions) {
-    onAddContact(values);
+    const newContact = {
+      ...values,
+      id: crypto.randomUUID(),
+      name: values.contactName,
+      number: values.contactNumber,
+    };
+    onAddContact(newContact);
     actions.resetForm();
-    console.log(values);
   }
 
   return (
     <div className="section-container contact-form-section">
       <Formik
-        initialValues={{ id: crypto.randomUUID(), contactName: '', contactNumber: '' }}
+        initialValues={{ contactName: '', contactNumber: '' }}
         validationSchema={contactFormSchema}
         onSubmit={handleSubmit}
       >
