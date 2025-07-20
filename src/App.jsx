@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -8,12 +8,25 @@ import SearchBox from './components/SearchBox';
 import contactList from './data/contacts.json';
 
 function App() {
+  const [contacts, addContact] = useState(contactList);
+  const [filter, setFilter] = useState('');
+
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase()),
+  );
+
+  const handleAddContact = (newContact) => {
+    addContact((prevContacts) => [...prevContacts, newContact]);
+  };
+
+  console.log(filteredContacts);
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      <ContactList contacts={contactList} />
+      <ContactForm onAddContact={handleAddContact} />
+      <SearchBox onFilter={setFilter} value={filter} />
+
+      <ContactList contacts={filteredContacts} />
     </div>
   );
 }
