@@ -5,6 +5,9 @@ import './App.css';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import SearchBox from './components/SearchBox';
+import contactList from './data/contacts.json';
+
+console.log(contactList);
 
 function App() {
   return (
