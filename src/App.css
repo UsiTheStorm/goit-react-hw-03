@@ -229,14 +229,12 @@ h3 {
     font-size: 1rem;
   }
 
-  /* Make form/search take full width on mobile */
   .contact-form,
   .search {
-    max-width: 100%; /* Override desktop max-width */
-    margin: 0; /* Remove auto margins to stretch fully */
+    max-width: 100%;
+    margin: 0;
   }
 
-  /* Contact list items stacking on mobile */
   .contacts-list {
     flex-direction: column;
   }
