@@ -19,6 +19,10 @@ function App() {
     setContacts((prevContacts) => [...prevContacts, newContact]);
   };
 
+  const handleDeleteContact = (id) => {
+    setContacts((prevContacts) => prevContacts.filter((cont) => cont.id !== id));
+  };
+
   console.log(filteredContacts);
   return (
     <div>
@@ -26,7 +30,7 @@ function App() {
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox onFilter={setFilter} value={filter} />
 
-      <ContactList contacts={filteredContacts} />
+      <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} />
     </div>
   );
 }
